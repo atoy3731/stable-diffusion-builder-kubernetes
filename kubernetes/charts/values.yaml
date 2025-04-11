@@ -6,7 +6,7 @@ models:
   pvcName: pvc-sd-data
   reclaimPolicy: Retain
   capacity: 50Gi
-  storageClass: ''
+  storageClass: ""
   pullPolicy: IfNotPresent
 
 service:
@@ -14,20 +14,20 @@ service:
 
 ingress:
   enabled: true
-  automatic1111Host: automatic1111.atoy.lol
+  automatic1111Host: automatic.atoy.lol
   comfyHost: comfy.atoy.lol
 
 comfy:
   image: harbor.atoy.dev/public/stablediffusion/comfy:latest
   enabled: true
-  cli_args: 
-  - --port
-  - "8081"
+  cli_args:
+    - --port
+    - "8081"
 automatic1111:
-  image: harbor.atoy.dev/public/stablediffusion/automatic1111:latest
+  image: harbor.atoy.dev/public/stablediffusion/automatic:latest
   enabled: true
-  cli_args: 
-  - --port 
-  - "8080"
+  cli_args:
+    - --port
+    - "8080"
 
 useCpu: true
