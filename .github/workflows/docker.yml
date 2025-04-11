@@ -25,7 +25,7 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          echo "$DOCKER_PASSWORD" | docker login ${{ var.DOCKER_REGISTRY }} -u $DOCKER_USER --password-stdin
+          echo "$DOCKER_PASSWORD" | docker login ${{ vars.DOCKER_REGISTRY }} -u $DOCKER_USER --password-stdin
 
       - name: Build Download
         uses: docker/build-push-action@v2
@@ -35,7 +35,7 @@ jobs:
           file: ./services/download/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ var.DOCKER_REGISTRY }}/public/stablediffusion/download:latest
+          tags: ${{ vars.DOCKER_REGISTRY }}/public/stablediffusion/download:latest
 
       - name: Build AUTOMATIC
         uses: docker/build-push-action@v2
@@ -45,7 +45,7 @@ jobs:
           file: ./services/AUTOMATIC1111/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ var.DOCKER_REGISTRY }}/public/stablediffusion/automatic:latest
+          tags: ${{ vars.DOCKER_REGISTRY }}/public/stablediffusion/automatic:latest
 
       - name: Build Comfy
         uses: docker/build-push-action@v2
@@ -55,4 +55,4 @@ jobs:
           file: ./services/comfy/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ var.DOCKER_REGISTRY }}/public/stablediffusion/comfy:latest
+          tags: ${{ vars.DOCKER_REGISTRY }}/public/stablediffusion/comfy:latest
