@@ -30,6 +30,8 @@ spec:
               name: http
               protocol: TCP
           image: {{ .Values.comfy.image }}
+          resources:
+            {{- toYaml .Values.comfy.resources | nindent 12 }}
           args:
             - python
             - -u
@@ -50,6 +52,8 @@ spec:
               name: http
               protocol: TCP
           image: {{ .Values.automatic1111.image }}
+          resources:
+            {{- toYaml .Values.automatic1111.resources | nindent 12 }}
           args:
             - python
             - -u

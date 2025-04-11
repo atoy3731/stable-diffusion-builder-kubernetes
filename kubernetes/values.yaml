@@ -1,1 +1,15 @@
+comfy:
+  resources:
+    limits:
+      nvidia.com/gpu: "1"
+    requests:
+      nvidia.com/gpu: "1"
+
+automatic1111:
+  resources:
+    limits:
+      nvidia.com/gpu: "1"
+    requests:
+      nvidia.com/gpu: "1"
+
 useCpu: false

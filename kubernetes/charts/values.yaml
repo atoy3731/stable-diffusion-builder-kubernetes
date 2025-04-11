@@ -19,12 +19,14 @@ ingress:
 
 comfy:
   image: harbor.atoy.dev/public/stablediffusion/comfy:latest
+  resources: {}
   enabled: true
   cli_args:
     - --port
     - "8081"
 automatic1111:
   image: harbor.atoy.dev/public/stablediffusion/automatic:latest
+  resources: {}
   enabled: true
   cli_args:
     - --port
