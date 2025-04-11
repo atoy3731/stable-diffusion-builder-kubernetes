@@ -1,4 +1,4 @@
-           
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -31,8 +31,8 @@ spec:
               protocol: TCP
           image: {{ .Values.comfy.image }}
           args:
-            - python 
-            - -u 
+            - python
+            - -u
             - main.py
             - --listen
             {{- if .Values.useCpu }}
@@ -51,13 +51,13 @@ spec:
               protocol: TCP
           image: {{ .Values.automatic1111.image }}
           args:
-            - python 
-            - -u 
+            - python
+            - -u
             - webui.py
-            - --listen 
-            - --allow-code 
+            - --listen
+            - --allow-code
             - --medvram
-            - --enable-insecure-extension-access 
+            - --enable-insecure-extension-access
             - --api
             {{- if .Values.useCpu }}
             - --no-half
@@ -78,8 +78,6 @@ spec:
         - imagePullPolicy: {{ .Values.models.pullPolicy }}
           name: models
           image: {{ .Values.models.image }}
-          command:
-            - /docker/init.sh
           args:
             - /data
           volumeMounts:
