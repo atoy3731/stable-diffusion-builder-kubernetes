@@ -3,10 +3,6 @@ name: Build Images
 on:
   push:
     branches: [main]
-  pull_request:
-    paths:
-      - docker-compose.yml
-      - services
 
 jobs:
   build:
@@ -39,7 +35,7 @@ jobs:
           file: ./services/download/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ var.DOCKER_REGISTRY }}/stablediffusion/download:latest
+          tags: ${{ var.DOCKER_REGISTRY }}/public/stablediffusion/download:latest
 
       - name: Build AUTOMATIC
         uses: docker/build-push-action@v2
@@ -49,7 +45,7 @@ jobs:
           file: ./services/AUTOMATIC1111/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ var.DOCKER_REGISTRY }}/stablediffusion/automatic:latest
+          tags: ${{ var.DOCKER_REGISTRY }}/public/stablediffusion/automatic:latest
 
       - name: Build Comfy
         uses: docker/build-push-action@v2
@@ -59,4 +55,4 @@ jobs:
           file: ./services/comfy/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ var.DOCKER_REGISTRY }}/stablediffusion/comfy:latest
+          tags: ${{ var.DOCKER_REGISTRY }}/public/stablediffusion/comfy:latest
