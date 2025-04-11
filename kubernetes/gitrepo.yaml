@@ -1,10 +1,11 @@
 kind: GitRepo
 apiVersion: fleet.cattle.io/v1alpha1
 metadata:
-  name: sonarr
+  name: stable-diffusion
   namespace: fleet-default
 spec:
   repo: https://github.com/atoy3731/stable-diffusion-builder-kubernetes.git
+  branch: main
   targets:
     - name: ai
       clusterSelector:
