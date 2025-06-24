@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ .Values.models.pvcName }}
+  name: pvc-sd-data
 spec:
   accessModes:
     - ReadWriteOnce

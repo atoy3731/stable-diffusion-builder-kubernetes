@@ -92,7 +92,7 @@ spec:
       restartPolicy: Always
       volumes:
         - persistentVolumeClaim:
-            claimName: {{ .Values.models.pvcName }}
+            claimName: pvc-sd-data
           name: sd-data
         - name: sd-output
           emptyDir: {}

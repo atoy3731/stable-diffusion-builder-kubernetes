@@ -1,9 +1,5 @@
 models:
   image: harbor.atoy.dev/public/stablediffusion/download:latest
-  # volumeType: hostPath
-  # hostPath:
-  #   localDirectory: /sd-data
-  pvcName: pvc-sd-data
   reclaimPolicy: Retain
   capacity: 50Gi
   storageClass: ""
