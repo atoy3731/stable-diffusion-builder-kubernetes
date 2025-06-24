@@ -1,7 +1,7 @@
 models:
   image: harbor.atoy.dev/public/stablediffusion/download:latest
   reclaimPolicy: Retain
-  capacity: 50Gi
+  capacity: 10Gi
   storageClass: ""
   pullPolicy: IfNotPresent
 
