@@ -3,10 +3,12 @@ models:
   reclaimPolicy: Retain
   capacity: 10Gi
   storageClass: ""
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   links: |
     https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt
       out=Stable-diffusion/v1-5-pruned-emaonly.ckpt
+  checksums: |
+    cc6cb27103417325ff94f52b7a5d2dde45a7515b25c255d8e396c90014281516  /data/models/Stable-diffusion/v1-5-pruned-emaonly.ckpt
 
 service:
   type: ClusterIP

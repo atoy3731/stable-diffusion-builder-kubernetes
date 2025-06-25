@@ -6,4 +6,6 @@ metadata:
 data:
   links.txt: |
     {{- .Values.models.links | nindent 4 }}
+  checksums.sha256: |
+    {{- .Values.models.checksums | nindent 4 }}
 {{- end }}
