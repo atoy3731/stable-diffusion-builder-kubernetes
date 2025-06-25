@@ -15,7 +15,7 @@ mkdir -vp /data/.cache \
 
 echo "Downloading, this might take a while..."
 
-aria2c -x 10 --disable-ipv6 --input-file /docker/links.txt --dir /data/models --continue
+aria2c -x 10 --disable-ipv6 --input-file /docker/links.txt --auto-file-renaming=false --dir models --continue || true
 
 echo "Checking SHAs..."
 
