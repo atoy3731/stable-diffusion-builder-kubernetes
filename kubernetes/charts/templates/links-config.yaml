@@ -1,0 +1,9 @@
+{{- if .Values.models.links }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: links-config
+data:
+  links.txt: |
+    {{- .Values.models.links | nindent 4 }}
+{{- end }}

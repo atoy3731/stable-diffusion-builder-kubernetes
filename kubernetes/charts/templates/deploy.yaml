@@ -89,6 +89,11 @@ spec:
               mountPath: /data
             - name: sd-output
               mountPath: /output
+            {{- if .Values.models.links }}
+            - name: links-volume
+              mountPath: /docker/links.txt
+              subPath: links.txt
+            {{- end }}
       restartPolicy: Always
       volumes:
         - persistentVolumeClaim:
@@ -96,4 +101,9 @@ spec:
           name: sd-data
         - name: sd-output
           emptyDir: {}
+        {{- if .Values.models.links }}
+        - name: links-volume
+          configMap:
+            name: models-links
+        {{- end }}
   replicas: 1

@@ -4,6 +4,9 @@ models:
   capacity: 10Gi
   storageClass: ""
   pullPolicy: IfNotPresent
+  links: |
+    https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt
+      out=Stable-diffusion/v1-5-pruned-emaonly.ckpt
 
 service:
   type: ClusterIP
@@ -29,3 +32,4 @@ automatic1111:
     - "8080"
 
 useCpu: true
+
