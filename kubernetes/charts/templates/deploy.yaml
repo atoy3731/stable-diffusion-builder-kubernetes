@@ -45,6 +45,9 @@ spec:
           volumeMounts:
             - name: sd-data
               mountPath: /data
+            - name: comfyui-icon
+              mountPath: /stable-diffusion/web/favicon.ico
+              subPath: favicon.ico
         {{- end }}
         {{- if .Values.automatic1111.enabled }}
         - name: automatic1111
@@ -105,6 +108,9 @@ spec:
           name: sd-data
         - name: sd-output
           emptyDir: {}
+        - name: comfyui-icon
+          configMap:
+            name: comfyui-icon
         {{- if .Values.models.links }}
         - name: links-volume
           configMap:
