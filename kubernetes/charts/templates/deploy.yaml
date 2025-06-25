@@ -104,6 +104,6 @@ spec:
         {{- if .Values.models.links }}
         - name: links-volume
           configMap:
-            name: models-links
+            name: links-config
         {{- end }}
   replicas: 1
