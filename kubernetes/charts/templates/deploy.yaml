@@ -17,7 +17,8 @@ spec:
     metadata:
       labels:
         app: app.stablediffusion
-      namespace: default
+      annotations:
+        checksum/config: {{ sha256sum .Values.models.links }}
     spec:
       {{- if not .Values.useCpu }}
       runtimeClassName: nvidia
