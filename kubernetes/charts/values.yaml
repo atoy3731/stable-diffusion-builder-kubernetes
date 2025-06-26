@@ -15,8 +15,15 @@ service:
 
 ingress:
   enabled: true
-  automatic1111Host: automatic.atoy.lol
-  comfyHost: comfy.atoy.lol
+  tlsSecretName: main-cert
+  automatic1111:
+    tls:
+      enabled: true
+    host: automatic.atoy.lol
+  comfy: 
+    tls:
+      enabled: true
+    host: comfy.atoy.lol
 
 comfy:
   image: harbor.atoy.dev/public/stablediffusion/comfy:latest
