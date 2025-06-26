@@ -14,7 +14,7 @@ spec:
       {{- if .Values.ingress.comfy.tls.enabled }}
       - {{ .Values.ingress.comfy.host }}
       {{- end }}
-    secretName: {{ .Values.ingress.secretName }}
+    secretName: {{ .Values.ingress.tlsSecretName }}
   {{- end }}
   rules:
     {{- if .Values.automatic1111.enabled }}
