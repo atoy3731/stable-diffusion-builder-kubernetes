@@ -5,9 +5,20 @@ metadata:
   annotations: {}
   name: sd
 spec:
+  {{- if or .Values.ingress.automatic1111.tls.enabled .Values.ingress.comfy.tls.enabled }}
+  tls:
+  - hosts:
+      {{- if .Values.ingress.automatic1111.tls.enabled }}
+      - {{ .Values.ingress.automatic1111.host }}
+      {{- end }}
+      {{- if .Values.ingress.comfy.tls.enabled }}
+      - {{ .Values.ingress.comfy.host }}
+      {{- end }}
+    secretName: {{ .Values.ingress.secretName }}
+  {{- end }}
   rules:
     {{- if .Values.automatic1111.enabled }}
-    - host: {{ .Values.ingress.automatic1111Host}}
+    - host: {{ .Values.ingress.automatic1111.host }}
       http:
         paths:
           - backend:
