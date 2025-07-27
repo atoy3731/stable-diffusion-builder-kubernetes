@@ -38,6 +38,8 @@ models:
       out=VAE/RealVisXL-V4-BakedVAE.safetensors
     https://civitai.com/api/download/models/344487?type=Model&format=SafeTensor&size=pruned&fp=fp16
       out=Stable-diffusion/realvis.safetensors
+    https://civitai.com/api/download/models/1224?type=Model&format=PickleTensor&size=full&fp=fp16
+      out=Stable-diffusion/f222_v1.ckpt
 
   checksums: |
     cc6cb27103417325ff94f52b7a5d2dde45a7515b25c255d8e396c90014281516  /data/models/Stable-diffusion/v1-5-pruned-emaonly.ckpt
