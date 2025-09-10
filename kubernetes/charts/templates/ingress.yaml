@@ -30,7 +30,7 @@ spec:
             pathType: Prefix
     {{- end }}
     {{- if .Values.comfy.enabled }}
-    - host: {{ .Values.ingress.comfyHost }}
+    - host: {{ .Values.ingress.comfy.host }}
       http:
         paths:
           - backend:
