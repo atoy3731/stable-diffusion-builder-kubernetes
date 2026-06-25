@@ -5,6 +5,12 @@ comfy:
     requests:
       nvidia.com/gpu: "1"
 
+  cli_args:
+    - --port
+    - "8081"
+    - --user-directory
+    - /data/user-data
+
 automatic1111:
   resources:
     limits:
