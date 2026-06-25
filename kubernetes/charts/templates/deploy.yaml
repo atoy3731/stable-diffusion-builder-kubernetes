@@ -88,6 +88,13 @@ spec:
           image: {{ .Values.models.image }}
           args:
             - /data
+          {{- if .Values.models.existingSecret }}
+          envFrom:
+            {{- if .Values.models.existingSecret }}
+            - secretRef:
+                name: {{ .Values.models.existingSecret }}
+            {{- end }}
+          {{- end }}
           volumeMounts:
             - name: sd-data
               mountPath: /data

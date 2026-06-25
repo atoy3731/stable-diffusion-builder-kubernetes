@@ -16,6 +16,7 @@ useCpu: false
 
 models:
   capacity: 25Gi
+  existingSecret: "hf-token"
   links: |
     https://huggingface.co/nicky007/stable-diffusion-logo-fine-tuned/resolve/main/train.ckpt
       out=Stable-diffusion/diffusion-logo-fine-tuned.ckpt
