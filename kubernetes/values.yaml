@@ -15,6 +15,7 @@ automatic1111:
 useCpu: false
 
 models:
+  capacity: 25Gi
   links: |
     https://huggingface.co/nicky007/stable-diffusion-logo-fine-tuned/resolve/main/train.ckpt
       out=Stable-diffusion/diffusion-logo-fine-tuned.ckpt
