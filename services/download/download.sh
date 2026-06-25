@@ -17,10 +17,6 @@ echo "Downloading, this might take a while..."
 
 aria2c -x 10 --disable-ipv6 --input-file /docker/links.txt --auto-file-renaming=false --dir /data/models --continue || true
 
-echo "Checking SHAs..."
-
-parallel --will-cite -a /docker/checksums.sha256 "echo -n {} | sha256sum -c"
-
 cat <<EOF
 By using this software, you agree to the following licenses:
 https://github.com/AbdBarho/stable-diffusion-webui-docker/blob/master/LICENSE

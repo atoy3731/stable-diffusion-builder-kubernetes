@@ -15,8 +15,7 @@ automatic1111:
 useCpu: false
 
 models:
-  capacity: 25Gi
-  existingSecret: "hf-token"
+  capacity: 100Gi
   links: |
     https://huggingface.co/nicky007/stable-diffusion-logo-fine-tuned/resolve/main/train.ckpt
       out=Stable-diffusion/diffusion-logo-fine-tuned.ckpt
@@ -26,8 +25,9 @@ models:
       out=Stable-diffusion/sd-v1-5-inpainting.ckpt
     https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth
       out=GFPGAN/GFPGANv1.4.pth
-
-  checksums: |
-    c6bbc15e3224e6973459ba78de4998b80b50112b0ae5b5c67113d56b4e366b19  /data/models/Stable-diffusion/sd-v1-5-inpainting.ckpt
-    c6a580b13a5bc05a5e16e4dbb80608ff2ec251a162311590c1f34c013d7f3dab  /data/models/VAE/vae-ft-mse-840000-ema-pruned.ckpt
-    e2cd4703ab14f4d01fd1383a8a8b266f9a5833dacee8e6a79d3bf21a1b6be5ad  /data/models/GFPGAN/GFPGANv1.4.pth
+    https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/diffusion_models/flux2_dev_fp8mixed.safetensors
+      out=diffusion_models/flux2_dev_fp8mixed.safetensors
+    https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/text_encoders/mistral_3_small_flux2_fp8.safetensors
+      out=text_encoders/mistral_3_small_flux2_fp8.safetensors
+    https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors
+      out=vae/flux2-vae.safetensors

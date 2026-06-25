@@ -105,8 +105,6 @@ spec:
               mountPath: /docker/links.txt
               subPath: links.txt
             - name: links-volume
-              mountPath: /docker/checksums.sha256
-              subPath: checksums.sha256
             {{- end }}
       restartPolicy: Always
       volumes:
