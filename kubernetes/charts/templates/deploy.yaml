@@ -104,7 +104,6 @@ spec:
             - name: links-volume
               mountPath: /docker/links.txt
               subPath: links.txt
-            - name: links-volume
             {{- end }}
       restartPolicy: Always
       volumes:
