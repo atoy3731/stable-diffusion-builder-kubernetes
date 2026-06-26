@@ -10,6 +10,8 @@ comfy:
     - "8081"
     - --user-directory
     - /data/user-data
+    - --output-directory
+    - /data/output
 
 automatic1111:
   resources:
