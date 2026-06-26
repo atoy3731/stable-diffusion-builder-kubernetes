@@ -12,6 +12,8 @@ comfy:
     - /data/user-data
     - --output-directory
     - /data/output
+    - --input-directory
+    - /data/input
 
 automatic1111:
   resources:
@@ -23,7 +25,7 @@ automatic1111:
 useCpu: false
 
 models:
-  capacity: 100Gi
+  capacity: 125Gi
   links: |
     https://huggingface.co/nicky007/stable-diffusion-logo-fine-tuned/resolve/main/train.ckpt
       out=Stable-diffusion/diffusion-logo-fine-tuned.ckpt
