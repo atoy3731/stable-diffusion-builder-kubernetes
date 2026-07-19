@@ -5,3 +5,8 @@ helm:
   releaseName: stable-diffusion
   valuesFiles:
     - values.yaml
+
+dependsOn:
+  - selector:
+      matchLabels:
+        app: nvidia-operator
