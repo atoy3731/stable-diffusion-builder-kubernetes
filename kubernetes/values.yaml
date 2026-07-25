@@ -25,7 +25,7 @@ automatic1111:
 useCpu: false
 
 models:
-  capacity: 125Gi
+  capacity: 200Gi
   links: |
     https://huggingface.co/RunDiffusion/Juggernaut-XL-v9/resolve/main/Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors
       out=Stable-diffusion/Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors
