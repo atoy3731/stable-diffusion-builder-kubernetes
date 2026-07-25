@@ -27,8 +27,10 @@ useCpu: false
 models:
   capacity: 125Gi
   links: |
+    https://huggingface.co/camenduru/SUPIR/resolve/main/SUPIR-v0Q.ckpt
+      out=RealESRGAN/SUPIR-v0Q.ckpt
     https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/4x-UltraSharp.pth
-      out=upscale_models/4x-UltraSharp.pth
+      out=RealESRGAN/4x-UltraSharp.pth
     https://huggingface.co/nicky007/stable-diffusion-logo-fine-tuned/resolve/main/train.ckpt
       out=Stable-diffusion/diffusion-logo-fine-tuned.ckpt
     https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.ckpt
